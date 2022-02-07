@@ -1,18 +1,6 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore } from 'redux';
+import petReducer from "./reducers/petReducer";
 
-
-const reducer = combineReducers({
-    // notes: noteReducer,
-    // filter: filterReducer,
-});
-
-const store = createStore(
-    reducer,
-    composeWithDevTools(
-        applyMiddleware(thunk)
-    )
-);
+const store = createStore(petReducer);
 
 export default store;
